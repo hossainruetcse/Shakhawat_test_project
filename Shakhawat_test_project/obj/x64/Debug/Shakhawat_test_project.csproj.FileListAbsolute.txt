@@ -1,0 +1,4 @@
+E:\project\Shakhawat_test_project\Shakhawat_test_project\bin\Debug\Shakhawat_test_project.exe
+E:\project\Shakhawat_test_project\Shakhawat_test_project\bin\Debug\Shakhawat_test_project.pdb
+E:\project\Shakhawat_test_project\Shakhawat_test_project\obj\x64\Debug\Shakhawat_test_project.exe
+E:\project\Shakhawat_test_project\Shakhawat_test_project\obj\x64\Debug\Shakhawat_test_project.pdb
