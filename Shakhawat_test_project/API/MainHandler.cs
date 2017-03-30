@@ -1,4 +1,5 @@
-﻿using Shakhawat_test_project.JSON;
+﻿using Shakhawat_test_project.Database;
+using Shakhawat_test_project.JSON;
 using Starcounter;
 using System;
 using System.Collections.Generic;
@@ -14,19 +15,42 @@ namespace Shakhawat_test_project.API
         {
             Handle.GET("/welcome", () =>
             {
-               
-                var json = new WelcomeJson()
+                return Db.Scope(() =>
                 {
-                    Data = "Welcome"
-                };
+                    var json = new WelcomeJson();
 
-                if (Session.Current == null)
-                {
-                    Session.Current = new Session();
-                }
-                json.Session = Session.Current;
-                return json;
+
+                    if (Session.Current == null)
+                    {
+                        Session.Current = new Session(SessionOptions.PatchVersioning);
+                    }
+                    json.Session = Session.Current;
+                    return json;
+                });
+               
             });
+
+            Handle.GET("/office/{?}", (string Id) =>
+            {
+                return Db.Scope(() =>
+                {
+                    FranchiseOffice office = Db.SQL<FranchiseOffice>("SELECT o FROM FranchiseOffice o WHERE o.ID= ?", Id).First;
+                    var json = new CorporationJson()
+                    {
+                        Data = office
+                    };
+
+                    if (Session.Current == null)
+                    {
+                        Session.Current = new Session(SessionOptions.PatchVersioning);
+                    }
+                    json.Session = Session.Current;
+                    return json;
+                });
+            });
+              
         }
     }
+
+   
 }

@@ -63,21 +63,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\MainHandler.cs" />
+    <Compile Include="Database\Address.cs" />
     <Compile Include="Database\Corporation.cs" />
-    <Compile Include="Database\Franchise.cs" />
+    <Compile Include="Database\FranchiseOffice.cs" />
+    <Compile Include="Database\Transection.cs" />
+    <Compile Include="JSON\CorporationJson.json.cs">
+      <DependentUpon>CorporationJson.json</DependentUpon>
+    </Compile>
     <Compile Include="JSON\WelcomeJson.json.cs">
       <DependentUpon>WelcomeJson.json</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="wwwroot\TestApp\Corporations.html" />
+  </ItemGroup>
   <ItemGroup>
     <TypedJSON Include="JSON\WelcomeJson.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
   </ItemGroup>
   <ItemGroup>
+    <TypedJSON Include="JSON\CorporationJson.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
     <None Include="wwwroot\TestApp\Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

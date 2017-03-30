@@ -1,5 +1,14 @@
 ﻿{
   "Html": "/TestApp/Welcome.html",
-  "FirstName": "",
-  "LastName": ""
+  "NewName$": "",
+  "NewOfficeName$": "",
+  "Offices$": [{"ID$": "", "name$": "", "number_of_home_sold$": 0, "total_commission$": 0, "trend$": 0, "average_commission$": 0}],
+  "Corporations$": [ { "name$": "" } ],
+  "CreateTrigger$": 0,
+  "CreateOfficeTrigger$": 0,
+  "sortByHomesTrigger$": 0,
+  "sortByTotalTrigger$": 0,
+  "sortByAverageTrigger$": 0,
+  "sortByTrendTrigger$": 0
+
 }

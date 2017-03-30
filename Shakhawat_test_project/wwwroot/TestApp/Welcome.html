@@ -4,6 +4,52 @@
     <h1>Welcome</h1>
     <h4>Create Main Corporation</h4>
     <template is="dom-bind">
-        
+        <fieldset>
+            <label>Name:</label>
+            <input value="{{model.NewName$::input}}">
+        </fieldset>
+        <button value="{{model.CreateTrigger$::click}}" onmousedown="++this.value">Create Corporation</button>
+        <h4>List Of Corporations</h4>
+        <template is="dom-repeat" items="{{model.Corporations$}}">
+            <hr />
+            <h4>{{item.name$}}</h4>
+            <h5>Franchise Offices</h5>
+            <label>Sort On:</label>
+            <button value="{{model.sortByHomesTrigger$::click}}" onmousedown="++this.value">Number Of Homes</button>
+            <button value="{{model.CreateTrigger$::click}}" onmousedown="++this.value">Total Comission</button>
+            <button value="{{model.CreateTrigger$::click}}" onmousedown="++this.value">Average Comission</button>
+            <button value="{{model.CreateTrigger$::click}}" onmousedown="++this.value">Positive Trend</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Number Of Homes</th>
+                        <th>Total Comission</th>
+                        <th>Average Comission</th>
+                        <th>Trend</th>
+                    </tr>
+                </thead>
+                <tr>
+                <tbody>
+                    <template is="dom-repeat" items="{{model.Offices$}}">
+                        <tr>
+                            <th scope="row"><a href="/office/{{item.ID$}}">{{item.name$}}</a></th>
+                            <td>{{item.number_of_home_sold$}}</td>
+                            <td>{{item.total_commission$}}</td>
+                            <td>{{item.average_commission$}}</td>
+                            <td>{{item.trend$}}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <h5>New Franchise Offices</h5>
+            <fieldset>
+                <label>Name:</label>
+                <input value="{{model.NewOfficeName$::input}}">
+            </fieldset>
+            <button value="{{model.CreateOfficeTrigger$::click}}" onmousedown="++this.value">Create New Office</button>
+        </template>
     </template>
+
+   
 </template>

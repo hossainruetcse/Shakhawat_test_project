@@ -1,0 +1,87 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <a href="/welcome"><< Back To Start</a>
+    <h4>Settings:{{model.name$}} </h4>
+     <h5>Edit Franchise Settings</h5>
+        <fieldset>
+            <label>Name:</label>
+            <input value="{{model.name$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Street:</label>
+            <input value="{{model.address$.street$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Number:</label>
+            <input value="{{model.address$.number$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>ZipCode:</label>
+            <input value="{{model.address$.zipCode$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>City:</label>
+            <input value="{{model.address$.city$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Country:</label>
+            <input value="{{model.address$.country$::input}}">
+        </fieldset>
+        <h6>Address:  {{model.address$.street$}} ,{{model.address$.number$}} ,{{model.address$.zipCode$}},{{model.address$.city$}} ,{{model.address$.country$}}</h6>
+        <button value="{{model.SaveTrigger$::click}}" onmousedown="++this.value">Save</button>
+        <h5>Ragister New Home Of Sale </h5>
+        <h6>Home Info</h6>
+        <fieldset>
+            <label>Street:</label>
+            <input value="{{model.NewSaleStreet$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Number:</label>
+            <input value="{{model.NewSaleNumber$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>ZipCode:</label>
+            <input value="{{model.NewSaleZipCode$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>City:</label>
+            <input value="{{model.NewSaleCity$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Country:</label>
+            <input value="{{model.NewSaleCountry$::input}}">
+        </fieldset>
+        <h6>Address:  {{model.NewSaleStreet$}} ,{{model.NewSaleNumber$}} ,{{model.NewSaleCity$}},{{model.NewSaleZipCode$::input}} ,{{model.NewSaleCountry$}}</h6>
+        <h6>Transection Info</h6>
+        <fieldset>
+            <label>Sales Price:</label>
+            <input value="{{model.NewSalePrice$::input}}">
+        </fieldset>
+        <fieldset>
+            <label>Comission Info:</label>
+            <input value="{{model.NewComissonInfo$::input}}">
+        </fieldset>
+        <button value="{{model.RegisterTrigger$::click}}" onmousedown="++this.value">Register</button>
+        <hr />
+        <h5>List of Transaction</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sales Price</th>
+                    <th>Comission</th>
+                </tr>
+            </thead>
+            <tr>
+            <tbody>
+                <template is="dom-repeat" items="{{model.Transection$}}">
+                    <tr>
+                        <td>{{item.price$}}</td>
+                        <td>{{item.comission$}}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+</template>

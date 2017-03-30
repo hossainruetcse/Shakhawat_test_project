@@ -1,0 +1,36 @@
+﻿{
+  "Html": "/TestApp/Corporations.html",
+  "address$": {
+    "parentId$": "",
+    "street$": 0,
+    "number$": 0,
+    "zipCode$": 0,
+    "city$": "",
+    "country$": ""
+  },
+  "Transection$": [
+    {
+      "ID$": "",
+      "price$": 0,
+      "comission$": 0
+    }
+  ],
+  "FranchiseOfficeID$": "",
+  "ID$": "",
+  "name$": "",
+  "newName$": "",
+  "NewSalePrice$": 0,
+  "NewComissonInfo$": 0,
+  "number_of_home_sold$": 0,
+  "total_commission$": 0,
+  "trend$": 0,
+  "NewName$": "",
+  "SaveTrigger$": 0,
+  "RegisterTrigger$": 0,
+  "average_commission$": 0,
+  "NewSaleStreet$": 0,
+  "NewSaleNumber$": 0,
+  "NewSaleZipCode$": 0,
+  "NewSaleCity$": "",
+  "NewSaleCountry$": ""
+}
